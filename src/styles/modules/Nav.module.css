@@ -1,44 +1,104 @@
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 
-    padding: 2em 0;
-    background-color: #002855;
-    color: #fff;
-    width: 14svw;
-    height: 100svh;
+  padding: 2em 0;
+  background-color: #002855;
+  color: #fff;
+  width: 10svh;
+  height: 100svh;
+
+  user-select: none;
 }
 
-.header h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
+.header.expand {
+  width: 14svw;
+}
+
+.header:has(h1, h2) {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 1em;
 }
 
 .container {
-    width: 100%;
-    margin-top: 2em;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
 }
 
 .container a {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    width: 100%;
-    text-decoration: none;
-    color: #fff;
-    padding: 2em 1em;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    transition: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  padding: 2em 1em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.container a.expand {
+  justify-content: flex-start;
 }
 
 .container a:hover {
-    background-color: #0050A0;
+  background-color: #0050a0;
 }
 
 .container a.active {
-    background-color: #0050A0;
+  background-color: #0050a0;
+}
+
+.containerExpand {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100%;
+  margin-left: 1em;
+}
+
+.containerExpand .buttonExpand {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  animation: bounce 1s infinite;
+}
+
+.containerExpand.expand .buttonExpand {
+  animation: bounce_expand 1s infinite;
+}
+
+.containerExpand.expand .buttonExpand img {
+  transform: rotate(180deg);
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes bounce_expand {
+  0%,
+  100% {
+    transform: translateX(25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
 }
