@@ -11,7 +11,7 @@ const Header = () => {
                 <nav className={styles.navigation}>
                     {upperPanel.map((icon) => (
                         <Link href="" key={crypto.randomUUID()}>
-                            <Image width={35} height={35} src={`/icons/${icon}.png`} alt={`Imagen de ${icon}`} />
+                            <Image width={30} height={30} src={`/icons/${icon}.png`} alt={`Imagen de ${icon}`} />
                         </Link>
                     ))}
                 </nav>
