@@ -7,7 +7,7 @@ const Header = () => {
 
     return (
         <>
-            <header>
+            <header className={styles.header}>
                 <nav className={styles.navigation}>
                     {upperPanel.map((icon) => (
                         <Link href="" key={crypto.randomUUID()}>

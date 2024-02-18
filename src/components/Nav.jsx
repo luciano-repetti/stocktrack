@@ -22,7 +22,7 @@ const Nav = () => {
 
     return (
         <header className={`${styles.header} ${expand ? styles.expand : ""}`}>
-            <article>
+            <article className={styles.containerLogo}>
                 {!expand && (
                     <h2>ST</h2>
                 )}

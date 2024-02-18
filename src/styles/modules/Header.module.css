@@ -1,30 +1,26 @@
 .header {
-    position: sticky;
-    top: 0;
-    z-index: 5;
-    height: 12svh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 5;
+  background: #002650;
+  height: 8svh;
 }
 
 .navigation {
-    display: flex;
-    align-items: center;
-    flex-flow: row;
-    background: #002650;
-    position: relative;
-    align-items: flex-start;
-    justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1em;
 }
 
 .navigation a {
-    text-decoration: none;
-    padding: 2em 0;
-    /* padding: 6px 15px; */
-    border-radius: 20px;
-    /* margin: 0 10px; */
-    transition: .3s;
+  text-decoration: none;
+  padding: 0.5em;
+  transition: 0.3s;
 }
 
 .navigation a:hover,
 .navigation a.active {
-    background: #0050A0;
+  background: #0050a0;
 }
