@@ -1,0 +1,23 @@
+.navigation {
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+    background: #002650;
+    position: relative;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    transition: .3s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background: #0050A0;
+}
