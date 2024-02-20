@@ -1,20 +1,28 @@
 import Link from 'next/link'
 import styles from '@/styles/modules/Nav.module.css'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 
 const Nav = () => {
 
+    const router = useRouter()
+
     const [expand, setExpand] = useState(false)
+    const [linkActive, setLinkActive] = useState('/')
 
     const navigations = [
         { icon: 'house_home_icon', name: 'FINANZAS', link: '/' },
-        { icon: 'cart_icon', name: 'ORDEN DE COMPRA', link: 'orden_de_compra' },
-        { icon: 'box_icon', name: 'INVENTARIO', link: 'inventario' },
-        { icon: 'history_icon', name: 'HISTORIAL', link: 'historial' },
-        { icon: 'notes_icon', name: 'NOTAS', link: 'notas' },
-        { icon: 'question_icon', name: 'AYUDA', link: 'ayuda' },
+        { icon: 'cart_icon', name: 'ORDEN DE COMPRA', link: '/orden_de_compra' },
+        { icon: 'box_icon', name: 'INVENTARIO', link: '/inventario' },
+        { icon: 'history_icon', name: 'HISTORIAL', link: '/historial' },
+        { icon: 'notes_icon', name: 'NOTAS', link: '/notas' },
+        { icon: 'question_icon', name: 'AYUDA', link: '/ayuda' },
     ]
+
+    useEffect(() => {
+        setLinkActive(router.pathname)
+    }, [router.pathname])
 
     const handleExpandMenu = () => {
         setExpand(!expand)
@@ -31,7 +39,7 @@ const Nav = () => {
 
             <nav className={styles.container}>
                 {navigations.map((data, index) => (
-                    <LinkCustom expand={expand} data={data} active={index == 0} key={crypto.randomUUID()} />
+                    <LinkCustom expand={expand} data={data} active={data.link === linkActive} key={crypto.randomUUID()} />
                 ))}
             </nav>
 
