@@ -1,8 +1,14 @@
 import TemplateBody from '@/components/TemplateBody'
+import Head from 'next/head'
 
 export default function Home() {
   return (
-    <TemplateBody namePage={"Finanzas"}>
-    </TemplateBody>
+    <>
+      <Head>
+        <title>Finanzas</title>
+      </Head>
+      <TemplateBody namePage={"Finanzas"}>
+      </TemplateBody>
+    </>
   )
 }

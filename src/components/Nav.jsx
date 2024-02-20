@@ -8,7 +8,7 @@ const Nav = () => {
     const [expand, setExpand] = useState(false)
 
     const navigations = [
-        { icon: 'house_home_icon', name: 'FINANZAS', link: 'finanzas' },
+        { icon: 'house_home_icon', name: 'FINANZAS', link: '/' },
         { icon: 'cart_icon', name: 'ORDEN DE COMPRA', link: 'orden_de_compra' },
         { icon: 'box_icon', name: 'INVENTARIO', link: 'inventario' },
         { icon: 'history_icon', name: 'HISTORIAL', link: 'historial' },
