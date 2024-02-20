@@ -1,110 +1,146 @@
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  z-index: 10;
-  top: 0;
-  background-color: #002855;
-  color: #fff;
-  width: 9svh;
-  height: 100svh;
-  user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    top: 0;
+    background-color: #002855;
+    color: #fff;
+    width: 9svh;
+    height: 100svh;
+    user-select: none;
+    transition: 0.5s;
 }
 
 .header.expand {
-  width: 14svw;
+    width: 14svw;
+    transition: 0.3s;
 }
 
 .header .containerLogo {
-  height: 8svh;
-  display: flex;
-  align-items: center;
+    height: 8svh;
+    display: flex;
+    padding: 2em 0.5em;
+    align-items: center;
+    /* Cambia la posición a absoluta */
+    position: absolute;
+    /* Lo fija en la parte superior */
+    left: 20px;
+    /* Ajusta la posición inicial */
+
 }
+
+
 
 .header h1,
 .header h2 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 .container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Margin para ocupar el espacio no existente del logo*/
+    margin-top: 8svh;
+
 }
 
 .container a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1em;
-  width: 100%;
-  text-decoration: none;
-  color: #fff;
-  padding: 2em 1em;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Modificado para que los íconos se mantengan a la izquierda */
+    gap: 1em;
+    text-decoration: none;
+    color: #fff;
+    padding: 2em 1.5em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    white-space: nowrap;
+    /* Esto empujará el contenido hacia la izquierda */
 }
 
+
+
+/*
+.container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+    padding: 2em 1em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+
+}
+*/
 .container a.expand {
-  justify-content: flex-start;
+    justify-content: flex-start;
 }
 
 .container a:hover {
-  background-color: #0050a0;
+    background-color: #0050a0;
 }
 
 .container a.active {
-  background-color: #0050a0;
+    background-color: #0050a0;
 }
 
 .containerExpand {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 100%;
-  margin-left: 1em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%;
+    margin-left: 1em;
+
 }
 
 .containerExpand .buttonExpand {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  animation: bounce 1s infinite;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    animation: bounce 1s infinite;
 }
 
 .containerExpand.expand .buttonExpand {
-  animation: bounce_expand 1s infinite;
+    animation: bounce_expand 1s infinite;
 }
 
 .containerExpand.expand .buttonExpand img {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 
 @keyframes bounce {
-  0%,
-  100% {
-    transform: translateX(-25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
 
-  50% {
-    transform: translateX(0);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
+    0%,
+    100% {
+        transform: translateX(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
 }
 
 @keyframes bounce_expand {
-  0%,
-  100% {
-    transform: translateX(25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
 
-  50% {
-    transform: translateX(0);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
+    0%,
+    100% {
+        transform: translateX(25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
 }

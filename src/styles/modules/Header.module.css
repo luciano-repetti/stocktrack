@@ -1,29 +1,30 @@
 .header {
-  position: absolute;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  z-index: 5;
-  background: #002650;
-  width: 100%;
-  height: 8svh;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 5;
+    background: #002650;
+    width: 100%;
+    height: 8svh;
 }
 
 .navigation {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1em;
+    gap: 1em;
 }
 
 .navigation a {
-  text-decoration: none;
-  padding: 0.5em;
-  transition: 0.3s;
+    text-decoration: none;
+    padding: 0.5em;
+    transition: 0.3s;
 }
 
 .navigation a:hover,
 .navigation a.active {
-  background: #0050a0;
+    background: #0050a0;
 }
