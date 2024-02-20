@@ -1,4 +1,4 @@
-import TemplateHead from '@/components/Template'
+import TemplateHead from '@/components/TemplateNavbar'
 import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }) {

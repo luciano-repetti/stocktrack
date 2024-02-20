@@ -1,7 +1,8 @@
-import TemplateHead from '@/components/Template'
+import TemplateBody from '@/components/TemplateBody'
 
 export default function Home() {
   return (
-    <h2>FINANZAS</h2>
+    <TemplateBody namePage={"Finanzas"}>
+    </TemplateBody>
   )
 }
