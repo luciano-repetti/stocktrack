@@ -1,0 +1,10 @@
+.main_body {
+  display: flex;
+}
+
+.main {
+  width: 100%;
+  margin-top: 8svh;
+  color: white;
+  padding: 3em;
+}
