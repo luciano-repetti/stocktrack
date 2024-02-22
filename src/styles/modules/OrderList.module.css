@@ -1,0 +1,46 @@
+.container_order {
+  display: flex;
+  width: 50%;
+  justify-content: end;
+}
+
+.container_order .list_order {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: #fff;
+  color: #000;
+  border-radius: 8px;
+  padding: 2em;
+}
+
+.container_order .list_order .title {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.container_item {
+  display: flex;
+  flex-direction: column;
+}
+
+.container_item .item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container_item .item .amount {
+  display: flex;
+  gap: 1em;
+}
+
+.container_item .item.gray {
+  color: #828282;
+}
+
+.container_item .line {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}

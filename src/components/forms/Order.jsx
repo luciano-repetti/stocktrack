@@ -1,7 +1,7 @@
 import { Input, Textarea } from "@/components/Input"
 import styles from "@/styles/modules/FormOrder.module.css"
 
-export default function Order() {
+export default function OrderForm() {
 
     const handleForm = (event) => {
         event.defaultPrevented()

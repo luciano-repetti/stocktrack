@@ -28,8 +28,16 @@ input[type='number']::-webkit-outer-spin-button {
   border: 1px solid #cf1020 !important;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 .flex {
   display: flex;
+}
+
+.justify-end {
+  justify-content: end;
 }
 
 .gap-1 {

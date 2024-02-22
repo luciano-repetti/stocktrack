@@ -1,6 +1,7 @@
-import TemplateBody from '@/components/TemplateBody'
-import Order from '@/components/forms/Order'
 import Head from 'next/head'
+import TemplateBody from '@/components/TemplateBody'
+import OrderForm from '@/components/forms/Order'
+import OrderList from '@/components/Order'
 
 export default function PurchaseOrder() {
     return (
@@ -9,7 +10,8 @@ export default function PurchaseOrder() {
                 <title>Orden de compra</title>
             </Head>
             <TemplateBody namePage={"Orden de compra"}>
-                <Order />
+                <OrderForm />
+                <OrderList />
             </TemplateBody>
         </>
     )
