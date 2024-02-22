@@ -4,10 +4,34 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  border: none;
 }
 
 body {
   height: 100svh;
   background-color: #033468;
   font-family: 'Poppins', sans-serif;
+}
+
+/* Sirve para sacar las flechas de incrementación o decreción de los inputs de tipo numero */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.message_error {
+  color: #cf1020 !important;
+}
+
+.error {
+  border: 1px solid #cf1020 !important;
+}
+
+.flex {
+  display: flex;
+}
+
+.gap-1 {
+  gap: 1em;
 }
