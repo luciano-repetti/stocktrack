@@ -51,7 +51,7 @@
   font-size: 1.2em;
 }
 
-.container_order button {
+.container_order .button_finalize {
   margin-top: 1em;
   border-radius: 8px;
   width: 100%;
@@ -78,27 +78,46 @@
 
 .container_item {
   display: flex;
-  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
 }
 
-.container_item .item {
+.container_item .container_info {
   display: flex;
-  justify-content: space-between;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5em;
+
   font-size: 1.1em;
   font-weight: 500;
 }
 
-.container_item .item .amount {
+.container_item .container_info .gray {
+  color: #828282;
+}
+
+.container_item .container_info .info {
   display: flex;
   gap: 1em;
 }
 
-.container_item .item.gray {
-  color: #828282;
-  margin-bottom: 1em;
+.container_item .container_info button {
+  width: 30px;
+  height: 30px;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 3px 16px 0px rgba(25, 25, 25, 0.2);
+  cursor: pointer;
 }
 
-.container_item .line {
+.line {
   width: 100%;
   height: 2px;
   background-color: #000;

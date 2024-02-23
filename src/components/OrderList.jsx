@@ -1,4 +1,5 @@
 import styles from "@/styles/modules/OrderList.module.css"
+import Image from "next/image";
 
 export default function OrderList() {
 
@@ -42,7 +43,7 @@ export default function OrderList() {
                         <span>${total}</span>
                     </article>
 
-                    <button >Finalizar</button>
+                    <button className={styles.button_finalize}>Finalizar</button>
 
                 </section>
             </article>
@@ -53,23 +54,31 @@ export default function OrderList() {
 const ItemOrder = () => {
 
     return (
-        <article className={styles.container_item}>
-            <div className={styles.item}>
-                <p>Cubo de rubik</p>
-                <div className={styles.amount}>
-                    <span>x4</span>
-                    <span>$1000</span>
+        <article className="flex flex-column">
+            <div className={styles.container_item}>
+                <div className={styles.container_info}>
+                    <span>Cubo de rubik</span>
+                    <span className={styles.gray}>Cubo de rubik 3x3</span>
+                </div>
+                <div className="flex gap-1 items-center">
+                    <div className={styles.container_info}>
+                        <div className={styles.info}>
+                            <span>x4</span>
+                            <span>$1000</span>
+                        </div>
+                        <div className={styles.info}>
+                            <span className={styles.gray}>x1</span>
+                            <span className={styles.gray}>$250</span>
+                        </div>
+                    </div>
+                    <div className={styles.container_info}>
+                        <button><Image width={25} height={25} src={"/icons/edit-icon.svg"} alt="imagen de editar" /></button>
+                        <button><Image width={25} height={25} src={"/icons/delete-icon.svg"} alt="imagen de borrar" /></button>
+                    </div>
                 </div>
             </div>
-            <div className={`${styles.item} ${styles.gray}`}>
-                <p>Cubo de rubik 3x3</p>
-                <div className={styles.amount}>
-                    <span>x1</span>
-                    <span>$250</span>
-                </div>
+            <div className={styles.line}>
             </div>
-
-            <div className={styles.line}></div>
         </article>
     )
 }
