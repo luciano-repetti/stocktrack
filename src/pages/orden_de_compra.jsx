@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import TemplateBody from '@/components/TemplateBody'
-import OrderForm from '@/components/forms/Order'
-import OrderList from '@/components/Order'
+import OrderForm from '@/components/forms/OrderForm'
+import OrderList from '@/components/OrderList'
 
 export default function PurchaseOrder() {
     return (
