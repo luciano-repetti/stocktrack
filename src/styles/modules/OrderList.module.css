@@ -1,124 +1,130 @@
 .container_order {
-  display: flex;
-  width: 50%;
-  justify-content: end;
+    display: flex;
+    width: 50%;
+    justify-content: end;
 }
 
 .container_order .list_order {
-  width: 65%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1em;
-  background-color: #fff;
-  color: #000;
-  border-radius: 8px;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px;
 }
 
 .container_order .title {
-  font-size: 1.5em;
-  font-weight: 600;
+    font-size: 1.5em;
+    font-weight: 600;
 }
 
 .container_order .container_list {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  height: 500px;
-  padding: 1em 2em;
-  padding-right: 0;
-  padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: 500px;
+    padding: 1em 2em;
+    padding-right: 0;
+    padding-bottom: 0;
 }
 
 .container_order .list_scroll {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  overflow-y: scroll;
-  height: 100%;
-  padding: 0 2em 2em 0;
-  padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    overflow-y: scroll;
+    height: 100%;
+    padding: 0 2em 2em 0;
+    padding-bottom: 0;
 }
 
 .container_order .sublist_order {
-  display: flex;
-  gap: 1;
-  flex-direction: column;
-  box-shadow: 0px 3px 16px 0px rgba(25, 25, 25, 0.2);
-  padding: 1em 2em;
-  font-weight: 500;
-  font-size: 1.2em;
+    display: flex;
+    gap: 1;
+    flex-direction: column;
+    box-shadow: 0px 3px 16px 0px rgba(25, 25, 25, 0.2);
+    padding: 1em 2em;
+    font-weight: 500;
+    font-size: 1.2em;
 }
 
 .container_order .button_finalize {
-  margin-top: 1em;
-  border-radius: 8px;
-  width: 100%;
-  height: 1em;
-  padding: 1em 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 1.2em;
-  font-weight: 500;
-  background-color: #41d635;
-  cursor: pointer;
-  transition: 0.2s;
+    margin-top: 1em;
+    border-radius: 8px;
+    width: 100%;
+    height: 1em;
+    padding: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 500;
+    background-color: #41d635;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 .container_order button:hover {
-  transform: scale(1.01);
+    transform: scale(1.01);
 }
 
 .container_order button:active {
-  transform: scale(1);
+    transform: scale(1);
 }
 
 .container_item {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1em;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
 }
 
 .container_item .container_info {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.5em;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
 
-  font-size: 1.1em;
-  font-weight: 500;
+    font-size: 1.1em;
+    font-weight: 500;
 }
 
 .container_item .container_info .gray {
-  color: #828282;
+    color: #828282;
 }
 
 .container_item .container_info .info {
-  display: flex;
-  gap: 1em;
+    display: flex;
+    gap: 1em;
 }
 
 .container_item .container_info button {
-  width: 30px;
-  height: 30px;
-  padding: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0px 3px 16px 0px rgba(25, 25, 25, 0.2);
-  cursor: pointer;
+    width: 30px;
+    height: 30px;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 3px 16px 0px rgba(25, 25, 25, 0.2);
+    cursor: pointer;
 }
 
+
+
+/* Problema de grosor de linea: https://stackoverflow.com/questions/46319925/css-horizontal-vertical-lines-have-different-thickness */
 .line {
-  width: 100%;
-  height: 2px;
-  background-color: #000;
+    width: 100%;
+    /*
+    height: 2px;
+    background-color: #000;
+    */
+    border-bottom: 2px solid #000;
 }
