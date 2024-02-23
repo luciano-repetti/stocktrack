@@ -1,61 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    border: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
 }
 
 body {
-    height: 100svh;
-    background-color: #033468;
-    font-family: 'Poppins', sans-serif;
+  height: 100svh;
+  overflow: hidden;
+  background-color: #033468;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Sirve para sacar las flechas de incrementación o decreción de los inputs de tipo numero */
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .message_error {
-    color: #cf1020 !important;
+  color: #cf1020 !important;
 }
 
 .error {
-    border: 1px solid #cf1020 !important;
+  border: 1px solid #cf1020 !important;
 }
 
 .w-100 {
-    width: 100%;
+  width: 100%;
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .justify-end {
-    justify-content: end;
+  justify-content: end;
 }
 
 .justify-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .flex-column {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .gap-1 {
-    gap: 1em;
+  gap: 1em;
 }
 
 .padding-2 {
-    padding: 2em;
+  padding: 2em;
 }
 
 .overflow-y {
-    overflow-y: scroll;
+  overflow-y: scroll;
 }

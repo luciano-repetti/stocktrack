@@ -8,21 +8,24 @@ export default function OrderList() {
     return (
         <section className={styles.container_order}>
             <article className={styles.list_order}>
-                <section className={styles.list_scroll}>
+                <section className={styles.container_list}>
                     <span className={styles.title}>Orden</span>
-                    <ItemOrder />
-                    <ItemOrder />
-                    <ItemOrder />
-                    <ItemOrder />
-                    <ItemOrder />
-                    <ItemOrder />
-                    <ItemOrder />
-                    <ItemOrder />
-                    <ItemOrder />
-                    <ItemOrder />
-                    <ItemOrder />
-
+                    <section className={styles.list_scroll}>
+                        <ItemOrder />
+                        <ItemOrder />
+                        <ItemOrder />
+                        <ItemOrder />
+                        <ItemOrder />
+                        <ItemOrder />
+                        <ItemOrder />
+                        <ItemOrder />
+                        <ItemOrder />
+                        <ItemOrder />
+                        <ItemOrder />
+                        <ItemOrder />
+                    </section>
                 </section>
+
                 <section className={styles.sublist_order}>
                     <article className="flex justify-between">
                         <span>Subtotal:</span>
