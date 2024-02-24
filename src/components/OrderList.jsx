@@ -5,20 +5,20 @@ import { calculateTotal } from "@/services/getPucharseOrder";
 
 
 
-export default function OrderList({ items }) {
+export default function OrderList({ items, handler }) {
 
-
-    const subtotal = calculateTotal(items)
+    const subtotal = calculateTotal(items);
     const descuento = 300;
     const total = subtotal - descuento;
+
     return (
         <section className={styles.container_order}>
             <article className={styles.list_order}>
                 <section className={styles.container_list}>
                     <span className={styles.title}>Orden</span>
                     <section className={styles.list_scroll}>
-                        {items.map(({ id, name, price, quantity }) => (
-                            <ItemOrder key={id} name={name} price={price} quantity={quantity} />
+                        {items.map(({ id, name, price, quantity, description }) => (
+                            <ItemOrder handler={handler} key={id} id={id} name={name} price={price} quantity={quantity} description={description} />
                         ))}
                     </section>
                 </section>
