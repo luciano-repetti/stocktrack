@@ -2,7 +2,7 @@ import Head from 'next/head'
 import TemplateBody from '@/components/TemplateBody'
 import OrderForm from '@/components/forms/OrderForm'
 import OrderList from '@/components/OrderList'
-import { getPucharseOrder } from '@/services/getPucharseOrder';
+import { getOrderStorage, getPucharseOrder, postItemStorage, postOrderStorage } from '@/services/pucharseOrder';
 import { useEffect, useState } from 'react';
 
 const pucharseOrderInitial = {
@@ -12,16 +12,12 @@ const pucharseOrderInitial = {
 }
 
 export default function PurchaseOrder() {
-    const [pucharseOrder, setPucharseOrder] = useState(pucharseOrderInitial);
-
     const [items, setItems] = useState([]);
 
     // const [counter, setCounter] = useState(4);
 
     useEffect(() => {
-        const data = getPucharseOrder();
-        setPucharseOrder(data);
-        setItems(data.items);
+        setItems(getOrderStorage());
     }, []);
 
 
@@ -29,15 +25,23 @@ export default function PurchaseOrder() {
 
         if (name && price && quantity) {
 
+            const currentItem = {
+                id: crypto.randomUUID(),
+                name: name.trim(),
+                description: description.trim(),
+                price: +price.trim(),
+                quantity: +quantity.trim()
+            }
+
             // Esto:
-            setItems((prevState) =>
-                [...prevState, {
-                    id: crypto.randomUUID(),
-                    name: name.trim(),
-                    description: description.trim(),
-                    price: +price.trim(),
-                    quantity: +quantity.trim(),
-                }])
+            setItems((prevState) => {
+                if (prevState?.length > 0) {
+                    return [...prevState, currentItem]
+                } else {
+                    return [currentItem]
+                }
+            })
+            postItemStorage(currentItem)
 
             // Es igual a esto:
             // setItems([...items, {
@@ -55,8 +59,9 @@ export default function PurchaseOrder() {
     }
 
     const handlerDeleteItem = (id) => {
-        console.log(id);
-        setItems(items.filter(item => item.id !== id))
+        const itemsFilter = items.filter(item => item.id !== id)
+        setItems(itemsFilter)
+        postOrderStorage(itemsFilter)
     }
 
 

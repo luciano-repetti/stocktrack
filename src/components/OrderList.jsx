@@ -1,6 +1,6 @@
 import styles from "@/styles/modules/OrderList.module.css"
 import { ItemOrder } from "./ItemOrder";
-import { calculateTotal } from "@/services/getPucharseOrder";
+import { calculateTotal } from "@/services/pucharseOrder";
 
 
 
@@ -8,8 +8,8 @@ import { calculateTotal } from "@/services/getPucharseOrder";
 export default function OrderList({ items, handler }) {
 
     const subtotal = calculateTotal(items);
-    const descuento = 300;
-    const total = subtotal - descuento;
+    const descuento = 0;
+    const total = subtotal - descuento || 0;
 
     return (
         <section className={styles.container_order}>
@@ -17,9 +17,11 @@ export default function OrderList({ items, handler }) {
                 <section className={styles.container_list}>
                     <span className={styles.title}>Orden</span>
                     <section className={styles.list_scroll}>
-                        {items.map(({ id, name, price, quantity, description }) => (
-                            <ItemOrder handler={handler} key={id} id={id} name={name} price={price} quantity={quantity} description={description} />
-                        ))}
+                        {items?.length > 0 ? (
+                            items?.map(({ id, name, price, quantity, description }) => (
+                                <ItemOrder handler={handler} key={id} id={id} name={name} price={price} quantity={quantity} description={description} />
+                            ))
+                        ) : <p>La lista esta vacia.</p>}
                     </section>
                 </section>
                 <section className={styles.sublist_order}>
