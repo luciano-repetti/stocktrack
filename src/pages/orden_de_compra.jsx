@@ -5,16 +5,8 @@ import OrderList from '@/components/OrderList'
 import { getOrderStorage, getPucharseOrder, postItemStorage, postOrderStorage } from '@/services/pucharseOrder';
 import { useEffect, useState } from 'react';
 
-const pucharseOrderInitial = {
-    id: 0,
-    items: [],
-    date: "",
-}
-
 export default function PurchaseOrder() {
     const [items, setItems] = useState([]);
-
-    // const [counter, setCounter] = useState(4);
 
     useEffect(() => {
         setItems(getOrderStorage());

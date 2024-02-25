@@ -1,9 +1,7 @@
 import styles from "@/styles/modules/OrderList.module.css"
 import { ItemOrder } from "./ItemOrder";
 import { calculateTotal } from "@/services/pucharseOrder";
-
-
-
+import { formatPriceArg } from "@/helpers/formats";
 
 export default function OrderList({ items, handler }) {
 
@@ -27,17 +25,17 @@ export default function OrderList({ items, handler }) {
                 <section className={styles.sublist_order}>
                     <article className="flex justify-between">
                         <span>Subtotal:</span>
-                        <span>${subtotal}</span>
+                        <span>${formatPriceArg(subtotal)}</span>
                     </article>
 
                     <article className="flex justify-between">
                         <span>Descuento:</span>
-                        <span>${descuento}</span>
+                        <span>${formatPriceArg(descuento)}</span>
                     </article>
 
                     <article className="flex justify-between">
                         <span>Total:</span>
-                        <span>${total}</span>
+                        <span>${formatPriceArg(total)}</span>
                     </article>
 
                     <button className={styles.button_finalize}>Finalizar</button>
@@ -47,5 +45,3 @@ export default function OrderList({ items, handler }) {
         </section>
     )
 }
-
-

@@ -19,7 +19,7 @@ export const getOrderStorage = () => {
 
 export const postOrderStorage = (items) => {
   if (items?.length > 0) {
-    localStorage.setItem('products', JSON.stringify([items]))
+    localStorage.setItem('products', JSON.stringify(items))
   } else {
     localStorage.removeItem('products')
   }
