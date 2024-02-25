@@ -19,8 +19,8 @@ export const ItemOrder = ({ handler, id, name, price, quantity, description }) =
                                 <span className={styles.gray}>x1</span>
                             </div>
                             <div className={styles.info}>
-                                <span>{formatPriceArg(total)}</span>
-                                <span className={styles.gray}>{formatPriceArg(price)}</span>
+                                <span>${formatPriceArg(total)}</span>
+                                <span className={styles.gray}>${formatPriceArg(price)}</span>
                             </div>
                         </div>
                         <div className={`${styles.container_info} flex-column`}>
