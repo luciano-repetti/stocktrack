@@ -16,7 +16,7 @@ export default function PurchaseOrder() {
 
     const [items, setItems] = useState([]);
 
-    const [counter, setCounter] = useState(4);
+    // const [counter, setCounter] = useState(4);
 
     useEffect(() => {
         const data = getPucharseOrder();
@@ -29,18 +29,29 @@ export default function PurchaseOrder() {
 
         if (name && price && quantity) {
 
-            setItems([...items, {
-                id: counter,
-                name: name.trim(),
-                description: description.trim(),
-                price: +price.trim(),
-                quantity: +quantity.trim(),
-            }])
+            // Esto:
+            setItems((prevState) =>
+                [...prevState, {
+                    id: crypto.randomUUID(),
+                    name: name.trim(),
+                    description: description.trim(),
+                    price: +price.trim(),
+                    quantity: +quantity.trim(),
+                }])
+
+            // Es igual a esto:
+            // setItems([...items, {
+            //     id: counter,
+            //     name: name.trim(),
+            //     description: description.trim(),
+            //     price: +price.trim(),
+            //     quantity: +quantity.trim(),
+            // }])
         } else {
             console.error("Alguno de los valores no esta siendo pasado")
         }
 
-        setCounter(counter + 1);
+        // setCounter(counter + 1);
     }
 
     const handlerDeleteItem = (id) => {
