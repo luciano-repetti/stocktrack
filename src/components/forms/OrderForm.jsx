@@ -1,6 +1,7 @@
 import { Input, Textarea } from "@/components/Input"
 import styles from "@/styles/modules/FormOrder.module.css"
 import { useState } from "react"
+import { orderValidations } from "./validations/orderValidations";
 
 
 export default function OrderForm({ handler }) {
@@ -9,9 +10,14 @@ export default function OrderForm({ handler }) {
         price: '',
         description: '',
         quantity: '',
-        // typeDiscount: '',
-        // discount: '',
     });
+
+    const [formErrors, setFormErrors] = useState({
+        name: '',
+        price: '',
+        quantity: '',
+        description: '',
+    })
 
     const { name, price, quantity, description, discount } = formItemState;
 
@@ -26,35 +32,41 @@ export default function OrderForm({ handler }) {
 
     const handleForm = (event) => {
         event.preventDefault()
-        console.log('Form Submitted with state:', formItemState);
-        handler(formItemState);
 
-        setFormItemState({
-            name: '',
-            price: '',
-            quantity: '',
-            description: '',
-            // discount: '',
-            // typeDiscount: ''
-        })
+        const errors = orderValidations(formItemState)
+        const validationForm = Object.values(errors).some(camp => camp !== "")
+
+        if (!validationForm) {
+            console.log('Form Submitted with state:', formItemState);
+            handler(formItemState);
+
+            setFormItemState({
+                name: '',
+                price: '',
+                quantity: '',
+                description: '',
+            })
+
+            return;
+        }
+        setFormErrors(errors);
     }
 
     return (
         <form className={styles.form} onSubmit={handleForm}>
 
             <Input
-                error={""}
+                error={formErrors.name}
                 label={"Nombre de producto"}
                 name={"name"}
                 value={name}
-                required={true}
+                required={false}
                 type={"text"}
                 placeholder="Ingrese el nombre del producto"
                 onChange={onInputChange}
             />
 
             <Textarea
-                error={""}
                 label={"Descripción de producto"}
                 required={false}
                 name={"description"}
@@ -66,21 +78,22 @@ export default function OrderForm({ handler }) {
 
             <fieldset className="flex gap-1">
                 <Input
+                    error={formErrors.price}
                     label={"Precio"}
                     name={"price"}
                     value={price}
-                    required={true}
+                    required={false}
                     type={"number"}
                     placeholder={"Ingrese precio"}
                     onChange={onInputChange}
 
                 />
                 <Input
-                    error={""}
+                    error={formErrors.quantity}
                     label={"Cantidad"}
                     name={"quantity"}
                     value={quantity}
-                    required={true}
+                    required={false}
                     type={"number"}
                     placeholder={"Ingrese cantidad"}
                     onChange={onInputChange}
