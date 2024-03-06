@@ -22,8 +22,10 @@ export default function PurchaseOrder() {
                 name: name.trim(),
                 description: description.trim(),
                 price: +price.trim(),
-                quantity: +quantity.trim()
+                quantity: +quantity.trim(),
             }
+
+            // const discounts = { discount: discount || "", typeDiscount: typeDiscount || "" }
 
             // Esto:
             setItems((prevState) => {

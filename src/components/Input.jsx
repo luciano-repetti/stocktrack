@@ -1,12 +1,12 @@
 import styles from '@/styles/modules/Input.module.css'
 
-export function Input({ label, required, type, placeholder, error, name, value, onChange }) {
+export function Input({ label, required, type, placeholder, error, name, value, onChange, style, ...rest }) {
 
     const text_placeholder = placeholder ? placeholder : ""
 
     return (
-        <Label label={label} required={required} error={error}>
-            <input className={error && "error"} placeholder={text_placeholder} type={type} required={required} name={name} value={value} onChange={onChange} />
+        <Label {...rest} label={label} required={required} error={error} style={style}>
+            <input {...rest} className={error && "error"} placeholder={text_placeholder} type={type} required={required} name={name} value={value} onChange={onChange} />
         </Label>
     )
 }
@@ -22,9 +22,9 @@ export function Textarea({ label, required, error, placeholder, name, value, onC
     )
 }
 
-export function Label({ label, required, error, children }) {
+export function Label({ label, required, error, style, children, ...rest }) {
     return (
-        <label className={styles.label}>
+        <label className={styles.label} style={style}>
             {label} {required && "*"}
             {children}
             {error && (

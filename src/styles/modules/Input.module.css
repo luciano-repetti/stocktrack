@@ -13,6 +13,10 @@
   border-radius: 8px;
 }
 
+.label input:disabled {
+  opacity: 0.8;
+}
+
 .label input:focus-visible,
 .label textarea:focus-visible {
   outline: none;

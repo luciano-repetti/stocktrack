@@ -6,8 +6,8 @@ import { formatPriceArg } from "@/helpers/formats";
 export default function OrderList({ items, handler }) {
 
     const subtotal = calculateTotal(items);
-    const descuento = 0;
-    const total = subtotal - descuento || 0;
+    // const descuento = 0
+    const total = subtotal || 0;
 
     return (
         <section className={styles.container_order}>
@@ -16,9 +16,13 @@ export default function OrderList({ items, handler }) {
                     <span className={styles.title}>Orden</span>
                     <section className={styles.list_scroll}>
                         {items?.length > 0 ? (
-                            items?.map(({ id, name, price, quantity, description }) => (
-                                <ItemOrder handler={handler} key={id} id={id} name={name} price={price} quantity={quantity} description={description} />
-                            ))
+                            items?.map(({ id, name, price, quantity, description }) => {
+                                if (name) {
+                                    return (
+                                        <ItemOrder handler={handler} key={id} id={id} name={name} price={price} quantity={quantity} description={description} />
+                                    )
+                                }
+                            })
                         ) : <p>La lista esta vacia.</p>}
                     </section>
                 </section>
@@ -28,10 +32,10 @@ export default function OrderList({ items, handler }) {
                         <span>${formatPriceArg(subtotal)}</span>
                     </article>
 
-                    <article className="flex justify-between">
+                    {/* <article className="flex justify-between">
                         <span>Descuento:</span>
                         <span>${formatPriceArg(descuento)}</span>
-                    </article>
+                    </article> */}
 
                     <article className="flex justify-between">
                         <span>Total:</span>

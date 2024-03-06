@@ -9,8 +9,11 @@ export default function OrderForm({ handler }) {
         price: '',
         description: '',
         quantity: '',
+        // typeDiscount: '',
+        // discount: '',
     });
-    const { name, price, quantity, description } = formItemState;
+
+    const { name, price, quantity, description, discount } = formItemState;
 
     const onInputChange = ({ target: { name, value } }) => {
         console.log('Input Change:', name, value);
@@ -31,6 +34,8 @@ export default function OrderForm({ handler }) {
             price: '',
             quantity: '',
             description: '',
+            // discount: '',
+            // typeDiscount: ''
         })
     }
 
@@ -38,7 +43,7 @@ export default function OrderForm({ handler }) {
         <form className={styles.form} onSubmit={handleForm}>
 
             <Input
-                error={"Este campo es obligatorio"}
+                error={""}
                 label={"Nombre de producto"}
                 name={"name"}
                 value={name}
@@ -49,7 +54,7 @@ export default function OrderForm({ handler }) {
             />
 
             <Textarea
-                error={"Este campo es obligatorio"}
+                error={""}
                 label={"Descripción de producto"}
                 required={false}
                 name={"description"}
@@ -71,7 +76,7 @@ export default function OrderForm({ handler }) {
 
                 />
                 <Input
-                    error={"Este campo es obligatorio"}
+                    error={""}
                     label={"Cantidad"}
                     name={"quantity"}
                     value={quantity}
@@ -84,6 +89,31 @@ export default function OrderForm({ handler }) {
             </fieldset>
 
             <button type="submit">Añadir a la orden</button>
+
+            {/* <fieldset style={{ display: 'flex' }}>
+                <span style={{ width: '50%' }}>
+                    Seleccione descuento:
+                    <Input onClick={onInputChange} style={{ flexDirection: 'row-reverse', alignItems: 'center', width: 'fit-content' }} error={""} label={"Porcentaje"} value={"percentage"} name={"typeDiscount"} checked={formItemState.typeDiscount === "percentage"} required={false} type={"radio"} onChange={onInputChange} />
+
+                    <Input onClick={onInputChange} style={{ flexDirection: 'row-reverse', alignItems: 'center', width: 'fit-content' }} error={""} label={"Dinero"} value={"dinner"} name={"typeDiscount"} checked={formItemState.typeDiscount === "dinner"} required={false} type={"radio"} onChange={onInputChange} />
+
+                    <Input onClick={onInputChange} style={{ flexDirection: 'row-reverse', alignItems: 'center', width: 'fit-content' }} error={""} label={"Ninguno"} value={""} name={"typeDiscount"} checked={formItemState.typeDiscount === ""} required={false} type={"radio"} onChange={onInputChange} />
+                </span>
+
+                <Input
+                    style={{ width: '50%' }}
+                    error={""}
+                    label={"Descuento total"}
+                    name={"discount"}
+                    value={discount}
+                    required={false}
+                    type={"text"}
+                    placeholder="Ingrese el descuento"
+                    onChange={onInputChange}
+                    disabled={formItemState.typeDiscount === ""}
+                />
+            </fieldset> */}
+
         </form>
     )
 }
